@@ -55,9 +55,9 @@ namespace RestApiCRUDDemo.Controllers
         public IActionResult PostEmployee(Employee employee)
         {
             try
-            {
-                _logger.LogInformation("Post is success");
+            {  
                 _employeeData.AddEmployee(employee);
+                _logger.LogInformation("Post is success");
                 return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + employee.Id, employee);
 
             }
@@ -82,28 +82,6 @@ namespace RestApiCRUDDemo.Controllers
                     return Ok();
                 }
                 return NotFound($"Employee with Id:{id} was not found");
-            }
-            catch (Exception)
-            {
-                _logger.LogError("something went wrong");
-                return StatusCode(500);
-            }
-            
-        }
-        [HttpPatch]
-        [Route("api/[controller]/{id}")]
-        public IActionResult EditEmployee(Guid id, Employee employee)
-        {
-            try
-            {
-                var existingEmployee = _employeeData.GetEmployee(id);
-                if (existingEmployee != null)
-                {
-                    _logger.LogInformation("");
-                    employee.Id = existingEmployee.Id;
-                    _employeeData.EditEmployee(employee);
-                }
-                return Ok(employee);
             }
             catch (Exception)
             {

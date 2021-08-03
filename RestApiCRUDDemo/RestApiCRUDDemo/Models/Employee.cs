@@ -18,5 +18,7 @@ namespace RestApiCRUDDemo.Models
         public int No { get; set; }
         [Required]
         public string GirisTarihi { get; set; }
+        [Required]
+        public int TelefonNo { get; set; }
     }
 }

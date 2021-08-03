@@ -15,6 +15,20 @@ namespace RestApiCRUDDemo.EmployeeData
         }
         public Employee AddEmployee(Employee employee)
         {
+            foreach (var item in _employeeContext.Employees.ToList())
+            {
+                if (employee.Name == item.Name)
+                {
+                    item.Name = employee.Name;
+                    item.Surname = employee.Surname;
+                    item.No = employee.No;
+                    item.GirisTarihi = employee.GirisTarihi;
+                    item.TelefonNo = employee.TelefonNo;
+                    _employeeContext.Employees.Update(item);
+                    _employeeContext.SaveChanges();
+                    return employee;
+                }
+            }
             employee.Id = Guid.NewGuid();
             _employeeContext.Employees.Add(employee);
             _employeeContext.SaveChanges();

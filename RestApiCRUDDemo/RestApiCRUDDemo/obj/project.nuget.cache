@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "snAsNK8nqoeEtLOqF77UnbptsyBZ0mtI9ro7r5q7zqMBaqnl3ykkxTtXAgsrSwoAccdtnaZihlgdulcGgxcrBw==",
+  "dgSpecHash": "FI1LWOlKeqOdxIFp/v1Cf21kT8JVPKnYoy/NWyL2mjO0QIQLtkuqUP/BoGJmTOXGOIUBA3+Vb7gQe8cnIt1bTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aydin\\source\\test\\RestApiCRUDDemo\\RestApiCRUDDemo\\RestApiCRUDDemo.csproj",
+  "projectFilePath": "C:\\Users\\Aydin\\source\\test\\first-repo\\RestApiCRUDDemo\\RestApiCRUDDemo\\RestApiCRUDDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aydin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Aydin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

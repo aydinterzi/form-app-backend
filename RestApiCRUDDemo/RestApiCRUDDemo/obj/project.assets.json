@@ -6105,11 +6105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aydin\\source\\test\\RestApiCRUDDemo\\RestApiCRUDDemo\\RestApiCRUDDemo.csproj",
+      "projectUniqueName": "C:\\Users\\Aydin\\source\\test\\first-repo\\RestApiCRUDDemo\\RestApiCRUDDemo\\RestApiCRUDDemo.csproj",
       "projectName": "RestApiCRUDDemo",
-      "projectPath": "C:\\Users\\Aydin\\source\\test\\RestApiCRUDDemo\\RestApiCRUDDemo\\RestApiCRUDDemo.csproj",
+      "projectPath": "C:\\Users\\Aydin\\source\\test\\first-repo\\RestApiCRUDDemo\\RestApiCRUDDemo\\RestApiCRUDDemo.csproj",
       "packagesPath": "C:\\Users\\Aydin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aydin\\source\\test\\RestApiCRUDDemo\\RestApiCRUDDemo\\obj\\",
+      "outputPath": "C:\\Users\\Aydin\\source\\test\\first-repo\\RestApiCRUDDemo\\RestApiCRUDDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Aydin\\AppData\\Roaming\\NuGet\\NuGet.Config",
