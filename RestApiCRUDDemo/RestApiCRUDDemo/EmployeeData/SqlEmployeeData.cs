@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.EntityFrameworkCore;
 namespace RestApiCRUDDemo.EmployeeData
 {
     public class SqlEmployeeData : IEmployeeData
@@ -13,7 +13,7 @@ namespace RestApiCRUDDemo.EmployeeData
         {
             _employeeContext = employeeContext;
         }
-        public Employee AddEmployee(Employee employee)
+        public async Task<Employee> AddEmployee(Employee employee)
         {
             foreach (var item in _employeeContext.Employees.ToList())
             {
@@ -25,44 +25,48 @@ namespace RestApiCRUDDemo.EmployeeData
                     item.GirisTarihi = employee.GirisTarihi;
                     item.TelefonNo = employee.TelefonNo;
                     _employeeContext.Employees.Update(item);
-                    _employeeContext.SaveChanges();
+                   await _employeeContext.SaveChangesAsync();
                     return employee;
                 }
             }
             employee.Id = Guid.NewGuid();
-            _employeeContext.Employees.Add(employee);
-            _employeeContext.SaveChanges();
+            await _employeeContext.Employees.AddAsync(employee);
+            await _employeeContext.SaveChangesAsync();
             return employee;
         }
 
-        public void DeleteEmployee(Employee employee)
+        public async Task DeleteEmployee(Employee employee)
         {
             _employeeContext.Employees.Remove(employee);
-            _employeeContext.SaveChanges();
-
+            await _employeeContext.SaveChangesAsync();
         }
 
-        public Employee EditEmployee(Employee employee)
+        public async Task<Employee> EditEmployee(Employee employee)
         {
             var existingEmployee = _employeeContext.Employees.Find(employee.Id);
             if (existingEmployee != null)
             {
                 existingEmployee.Name = employee.Name;
                 _employeeContext.Employees.Update(existingEmployee);
-                _employeeContext.SaveChanges();
+               await _employeeContext.SaveChangesAsync();
             }
             return employee;
         }
 
-        public Employee GetEmployee(Guid id)
+        public async Task<Employee> GetEmployee(Guid id)
         {
-            var employee = _employeeContext.Employees.Find(id);
+            var employee =await _employeeContext.Employees.FindAsync(id);
             return employee;
         }
 
-        public List<Employee> GetEmployees()
+        public async Task<List<Employee>> GetEmployees()
         {
-           return _employeeContext.Employees.ToList();
+            return await _employeeContext.Employees.ToListAsync();
+        }
+        
+        public async Task<List<LoginModel>> GetLogin()
+        {
+            return await _employeeContext.Logins.ToListAsync();
         }
     }
 }

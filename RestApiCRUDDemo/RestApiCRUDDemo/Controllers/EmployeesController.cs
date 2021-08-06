@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace RestApiCRUDDemo.Controllers
 {
-
     [ApiController]
     public class EmployeesController : ControllerBase
     {
@@ -24,61 +23,60 @@ namespace RestApiCRUDDemo.Controllers
 
         [HttpGet]
         [Route("api/[controller]")]
-        public IActionResult GetEmployees()
+        public async Task<IActionResult> GetEmployees()
         {
             try
             {
                 _logger.LogInformation("Fetching all the employees from the storage");
-                return Ok(_employeeData.GetEmployees());
+                return Ok(await _employeeData.GetEmployees());
             }
             catch (Exception ex)
             {
 
-                _logger.LogError("something went wrong:");
+                _logger.LogError("something went wrong:"+ex);
                 return StatusCode(500, "internal server error");
             }
-            
         }
         [HttpGet]
         [Route("api/[controller]/{id}")]
-        public IActionResult GetEmployee(Guid id)
+        public async Task<IActionResult> GetEmployee(Guid id)
         {
-            var employee = _employeeData.GetEmployee(id);
+            var employee =await _employeeData.GetEmployee(id);
             if (employee != null)
             {
-                return Ok(_employeeData.GetEmployee(id));
+                return Ok(employee);
             }
             return NotFound($"Employee with Id:{id} was not found");
         }
         [HttpPost]
         [Route("api/[controller]")]
-        public IActionResult PostEmployee(Employee employee)
+        public async Task<IActionResult> PostEmployee(Employee employee)
         {
             try
             {  
-                _employeeData.AddEmployee(employee);
+                await _employeeData.AddEmployee(employee);
                 _logger.LogInformation("Post is success");
                 return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + employee.Id, employee);
 
             }
             catch (Exception ex)
             {
-                _logger.LogError("something went wrong");
+                _logger.LogError("something went wrong"+ex);
                 return StatusCode(500);
             }
         }
 
         [HttpDelete]
         [Route("api/[controller]/{id}")]
-        public IActionResult DeleteEmployee(Guid id)
+        public async Task<IActionResult> DeleteEmployee(Guid id)
         {
             try
             {
-                var employee = _employeeData.GetEmployee(id);
+                var employee =await _employeeData.GetEmployee(id);
                 if (employee != null)
                 {
                     _logger.LogInformation("Employee deleted.");
-                    _employeeData.DeleteEmployee(employee);
+                    await _employeeData.DeleteEmployee(employee);
                     return Ok();
                 }
                 return NotFound($"Employee with Id:{id} was not found");

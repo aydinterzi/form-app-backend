@@ -47,6 +47,20 @@ namespace RestApiCRUDDemo.Migrations
 
                     b.ToTable("Employees");
                 });
+
+            modelBuilder.Entity("RestApiCRUDDemo.Models.LoginModel", b =>
+                {
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserName");
+
+                    b.ToTable("Logins");
+                });
 #pragma warning restore 612, 618
         }
     }

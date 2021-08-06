@@ -10,8 +10,8 @@ using RestApiCRUDDemo.Models;
 namespace RestApiCRUDDemo.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    [Migration("20210730111155_Inada")]
-    partial class Inada
+    [Migration("20210804122447_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,9 +42,26 @@ namespace RestApiCRUDDemo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TelefonNo")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("RestApiCRUDDemo.Models.LoginModel", b =>
+                {
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserName");
+
+                    b.ToTable("Logins");
                 });
 #pragma warning restore 612, 618
         }
