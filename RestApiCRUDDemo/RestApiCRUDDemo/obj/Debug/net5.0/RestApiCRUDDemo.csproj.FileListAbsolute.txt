@@ -193,3 +193,8 @@ C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\obj\Debug\n
 C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\obj\Debug\net5.0\RestApiCRUDDemo.RazorTargetAssemblyInfo.cache
 C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\obj\Debug\net5.0\RestApiCRUDDemo.csproj.CopyComplete
 C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\obj\Debug\net5.0\RestApiCRUDDemo.genruntimeconfig.cache
+C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Aydin\testsource\first-repo\RestApiCRUDDemo\RestApiCRUDDemo\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll

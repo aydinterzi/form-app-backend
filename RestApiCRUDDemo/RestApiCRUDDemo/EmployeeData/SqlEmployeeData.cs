@@ -64,9 +64,5 @@ namespace RestApiCRUDDemo.EmployeeData
             return await _employeeContext.Employees.ToListAsync();
         }
         
-        public async Task<List<LoginModel>> GetLogin()
-        {
-            return await _employeeContext.Logins.ToListAsync();
-        }
     }
 }

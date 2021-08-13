@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RestApiCRUDDemo.EmployeeData;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace RestApiCRUDDemo.Controllers
 {
+    [Authorize]
     [ApiController]
     public class EmployeesController : ControllerBase
     {
@@ -57,7 +59,6 @@ namespace RestApiCRUDDemo.Controllers
                 await _employeeData.AddEmployee(employee);
                 _logger.LogInformation("Post is success");
                 return Created(HttpContext.Request.Scheme + "://" + HttpContext.Request.Host + HttpContext.Request.Path + "/" + employee.Id, employee);
-
             }
             catch (Exception ex)
             {

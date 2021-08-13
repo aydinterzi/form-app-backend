@@ -8,7 +8,6 @@ namespace RestApiCRUDDemo.EmployeeData
 {
     public interface IEmployeeData
     {
-        Task<List<LoginModel>> GetLogin();
         Task<List<Employee>> GetEmployees();
         Task<Employee> GetEmployee(Guid id);
         Task<Employee> AddEmployee(Employee employee);
