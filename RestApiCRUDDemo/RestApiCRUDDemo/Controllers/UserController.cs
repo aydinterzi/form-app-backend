@@ -34,7 +34,8 @@ namespace RestApiCRUDDemo.Controllers
             var user = new User
             {
                 UserName = model.UserName,
-                Name = model.Name
+                Name = model.Name,
+                Email=model.Email
             };
 
             var result = await _userManager.CreateAsync(user,model.Password);
